@@ -12,25 +12,27 @@ var last = 0;
 
 $(document).ready(function () {
     $('#slider-left').click(function () {
-        $('.banner, .banner::before').animate({opacity: 0},'slow', function () {
+        $(".banner::before").addClass('hidden');
+        $('.banner').animate({opacity: 0},'slow', function () {
             last = (last+9)%10;
             $(".banner")
                 .css("background-image","url("+wall[last][0]+")")
                 .animate({opacity: 1});
             $(".banner-content h1").text(wall[last][1]);
             $(".banner-content p").text(wall[last][2]);
-            $(".banner::before").animate({opacity: 1});
         });
+        $(".banner::before").removeClass('hidden');
     });
     $('#slider-right').click(function () {
-        $('.banner, .banner::before').animate({opacity: 0},'slow', function () {
+        $(".banner::before").addClass('hidden');
+        $('.banner').animate({opacity: 0},'slow', function () {
             last = (last+1)%10;
             $(".banner")
                 .css("background-image","url("+wall[last][0]+")")
                 .animate({opacity: 1});
             $(".banner-content h1").text(wall[last][1]);
             $(".banner-content p").text(wall[last][2]);
-            $(".banner::before").animate({opacity: 1});
         });
+        $(".banner::before").removeClass('hidden');
     });
 });
