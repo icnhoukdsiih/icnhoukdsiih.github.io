@@ -12,23 +12,25 @@ var last = 0;
 
 $(document).ready(function () {
     $('#slider-left').click(function () {
-        $('.banner').animate({opacity: 0},'slow', function () {
+        $('.banner, .banner::before').animate({opacity: 0},'slow', function () {
             last = (last+9)%10;
             $(".banner")
                 .css("background-image","url("+wall[last][0]+")")
-                .animate({opacity: 1})
+                .animate({opacity: 1});
             $(".banner-content h1").text(wall[last][1]);
             $(".banner-content p").text(wall[last][2]);
+            $(".banner::before").animate({opacity: 1});
         });
     });
     $('#slider-right').click(function () {
-        $('.banner').animate({opacity: 0},'slow', function () {
+        $('.banner, .banner::before').animate({opacity: 0},'slow', function () {
             last = (last+1)%10;
             $(".banner")
                 .css("background-image","url("+wall[last][0]+")")
-                .animate({opacity: 1})
+                .animate({opacity: 1});
             $(".banner-content h1").text(wall[last][1]);
             $(".banner-content p").text(wall[last][2]);
+            $(".banner::before").animate({opacity: 1});
         });
     });
 });
