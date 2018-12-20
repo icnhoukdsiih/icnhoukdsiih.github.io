@@ -12,6 +12,9 @@ div {
     content: none;
     clear: both;
 }
+.hidden {
+    display: none;
+}
 /*banner background style*/
 .banner {
     background: url("../image/wall1-cu-lao-xanh-quy-nhon.jpg") bottom left / cover no-repeat;
